@@ -19,15 +19,13 @@ void setup()
 {
   Serial.begin(9600);   //or 115200
   
-  pinMode(encoderPinA, INPUT);
-  pinMode(encoderPinB, INPUT);
+  pinMode(encoderPinA, INPUT_PULLUP);
+  pinMode(encoderPinB, INPUT_PULLUP);
 
   // - interrupt 0 is connected to pin 2
   // - interrupt 1 is connected to pin 3
   attachInterrupt(digitalPinToInterrupt(2), doEncoderL, RISING);
   
-  digitalWrite(encoderPinA, HIGH);  //pullup resistors
-  digitalWrite(encoderPinB, HIGH);
   Serial.println("Licznik: ");
 }
 
